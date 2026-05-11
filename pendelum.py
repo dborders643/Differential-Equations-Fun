@@ -19,10 +19,10 @@ THETA_DOT_0 = 0         # initial angular speed (rad/s)
 
 # Parameters
 t_max = 100             # total time simulated (s)
-delta_t = 0.01          # step-size (s)
+dt = 0.01          # step-size (s)
 
 # Preallocation
-num_steps = int(t_max / delta_t)    # It's good practice to use num_steps over delta_t due to truncation 
+num_steps = int(t_max / dt)    # It's good practice to use num_steps over dt due to truncation 
 times = np.linspace(0, t_max, num_steps)
 theta = np.zeros(num_steps)
 theta_dot = np.zeros(num_steps)
@@ -41,8 +41,8 @@ theta_dot[0] = THETA_DOT_0
 for i in range(num_steps - 1):
     theta_dot_dot[i] = get_theta_double_dot(theta[i], theta_dot[i])
     # Euler-Cromer method (better converses energy)     --->    EC method follows form of next_state = current_state + rate_of_change_of_current * dt
-    theta_dot[i+1] =  theta_dot[i] + theta_dot_dot[i] * delta_t
-    theta[i+1] = theta[i] + theta_dot[i+1] * delta_t
+    theta_dot[i+1] =  theta_dot[i] + theta_dot_dot[i] * dt
+    theta[i+1] = theta[i] + theta_dot[i+1] * dt
 
 # ------------------- Visualization -------------------
 # Angle vs. Time Plot
