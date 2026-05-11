@@ -1,7 +1,7 @@
 # Davis Borders
 # 05/05/2026
 # This program uses numerical methods to solve a simple ODE: the damped-nonlinear pendelum. The program highlights numerical methods (specifically the Euler-Cromer method), phase-space, and implicitly hints at chaos theory.
-# This program is meant to serve as a guide to more complex differntial equations, as the methodolgy is the same. Furthermore, additional logic can be implemented like animations using the solutions computed.
+# This program is meant to serve as a guide to more complex differntial equations, as the methodology is the same. Furthermore, additional logic can be implemented like animations using the solutions computed.
 
 # Imports
 import numpy as np
